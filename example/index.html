@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../dist/export-doc.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div>
+    <button primary onclick="testWord()">测试word</button>
+  </div>
+  <div id="test-word">
+    <h2>这是二级标题</h2>
+    <p style="font-size: 30px;">We all live in a yellow submarine, yellow submarine, yellow submarine, yellow submarine</p>
+    <p style="font-size: 30px;">这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试</p>
+    <p class="sadf">sdfasdfsdfasdfdf</p>
+    <p style="color: red">Images can also be exported if you source them as base64 DATA URI.</p>
+    <p class="qqq">fdsafadsfd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么asfasdfads111111</p>
+    <p style="text-align: center;"><img class="img" src="img/test.jpg"></p>
+    <img class="img" src="img/test.jpg">
+    <p style="text-indent: 0;">sdfasdfsdfasdfdf222222222222</p>
+    <p class="sadf">sdfasdfsdfasdfdf222222222222</p>
+  </div>
+  <script>
+    console.log(ExportDoc);
+    function testWord() {
+      ExportDoc.toWord('#test-word')
+    }
+  </script>
+</body>
+</html>

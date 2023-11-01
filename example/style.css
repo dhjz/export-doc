@@ -1,0 +1,11 @@
+body { font-size: 14px; padding: 10px; --input-height: 32px; --input-radius: 4px}
+button, .btn { display: inline-block; white-space: nowrap;  cursor: pointer;  background: #fff;  border: 1px solid #dcdfe6;  color: #333;  -webkit-appearance: none;
+  text-align: center;  user-select: none; height: var(--input-height); line-height: var(--input-height); padding: 0px 10px; border-radius: var(--input-radius); }
+button[primary], .btn[primary] { background: #409eff; color: #fff; border-color: #409eff; }
+button+button, .btn+.btn, .btn+button, button+.btn { margin-left: 10px; }
+
+#test-word h2 { text-align: center; }
+#test-word .sadf{ display: none;}
+#test-word p{ line-height: 30px; font-weight: bold; text-indent: 2em;}
+#test-word .qqq{ color: #0f0; font-style: italic; line-height: 3; text-align: center; text-indent: 0;}
+#test-word .img{ margin: 10px 20px;}

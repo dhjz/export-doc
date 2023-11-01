@@ -1,0 +1,37 @@
+<table id="mytable">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Population</th>
+            <th>Date</th>
+            <th>Age</th>
+            <th>Temp</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>مصر</td>
+            <td>1363480000</td>
+            <td>March 24 2014</td>
+            <td>19.1</td>
+            <td>₹</td>
+        </tr>
+        <tr *ngFor="let i of rows">
+            <td>Syria</td>
+            <td>0000000</td>
+            <td>March 24 2014</td>
+            <td>11</td>
+            <td>{{ i }}</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="exportAsString('pdf', 'portrait')">From String</button>
+<button (click)="exportAs('pdf', 'portrait')">export as pdf</button>
+<button (click)="exportAs('pdf', 'landscape')">export as pdf landscape</button>
+<button (click)="exportAs('png')">export as png</button>
+<button (click)="exportAs('csv')">export as csv</button>
+<button (click)="exportAs('txt')">export as txt</button>
+<button (click)="exportAs('xlsx')">export as Ms-Excel</button>
+<button (click)="exportAs('docx')">export as MS-Word</button>
+<button (click)="exportAs('json')">export as json</button>
+<button (click)="exportAs('xml')">export as xml</button>
