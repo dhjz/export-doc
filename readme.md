@@ -46,7 +46,8 @@ npm i @rollup/plugin-babel @babel/core @babel/plugin-external-helpers @babel/pre
 ```
 
 ### 示例 rollup.config.js
-- package.json 配置 "type": "module",
+- package.json 配置 "type": "module"  
+
 ```js
 import terser from '@rollup/plugin-terser'
 import resolve from '@rollup/plugin-node-resolve'
