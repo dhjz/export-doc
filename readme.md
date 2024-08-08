@@ -1,6 +1,9 @@
 ### 介绍
 纯前端js将html导出word文档doc文档(含样式、图片、canvas等元素), 没有其他依赖，支持排除指定样式
 
+### 示例
+[http://199311.xyz/export-doc/example/index.html](http://199311.xyz/export-doc/example/index.html)
+
 ### 构建
 ```shell
 npm run build
