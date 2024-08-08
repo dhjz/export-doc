@@ -19,3 +19,29 @@ export function formatDate(fmt, date) {
   }
   return fmt
 }
+
+export function setStyle(ele, sty) {
+  if (ele.nodeName.toLowerCase() != 'img') {
+    // let sty = getComputedStyle(ele)
+    ele.setAttribute('style', (ele.getAttribute('style') || '') + `;font-size: ${sty.fontSize};color: ${sty.color};font-style: ${sty.fontStyle};line-height: ${sty.lineHeight};font-weight: ${sty.fontWeight};
+      font-family: ${sty.fontFamily};text-align: ${sty.textAlign};text-indent: ${sty.textIndent}; margin: ${sty.margin}; padding: ${sty.padding};`);
+  }
+}
+
+export function saveAs(blob, fileName) {
+    var URL = window.URL || window.webkitURL;
+    var a = document.createElement('a');
+    fileName = fileName || blob.name || 'download';
+    a.download = fileName;
+    a.rel = 'noopener';
+    a.target = '_blank'
+
+    if (typeof blob === 'string') {
+      a.href = blob;
+      a.click()
+    } else {
+      a.href = URL.createObjectURL(blob);
+      setTimeout(() => a.click(), 0);
+      setTimeout(() => URL.revokeObjectURL(a.href), 2E4); // 20s
+    }
+}

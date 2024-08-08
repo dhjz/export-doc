@@ -3,31 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>测试导出word</title>
   <script src="../dist/export-doc.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div>
-    <button primary onclick="testWord()">测试word</button>
+    <button primary onclick="testWord()">测试导出word</button>
+    <button primary onclick="testWord('关于导出文章这回事')">测试导出word带标题</button>
   </div>
   <div id="test-word">
     <h2>这是二级标题</h2>
     <p style="font-size: 30px;">We all live in a yellow submarine, yellow submarine, yellow submarine, yellow submarine</p>
+    <p class="not-export" style="font-size: 22px;">这是设置的不导出的元素元素</p>
     <p style="font-size: 30px;">这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试这是在测试</p>
     <p class="sadf">sdfasdfsdfasdfdf</p>
+    <p class="not-export1" style="font-size: 22px;">这是设置的不导出的元素元素</p>
     <p style="color: red">Images can also be exported if you source them as base64 DATA URI.</p>
     <p class="qqq">fdsafadsfd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么fd你说这是什么asfasdfads111111</p>
     <p style="text-align: center;"><img class="img" src="img/test.jpg"></p>
     <img class="img" src="img/test.jpg">
     <p style="text-indent: 0;">sdfasdfsdfasdfdf222222222222</p>
+    <canvas id="test" width="500" height="500"></canvas>
+    <p style="text-indent: 0;">sdfasdfsdfasdfdf222222222222</p>
     <p class="sadf">sdfasdfsdfasdfdf222222222222</p>
   </div>
   <script>
     console.log(ExportDoc);
-    function testWord() {
-      ExportDoc.toWord('#test-word')
+    function testWord(title) {
+      ExportDoc.toWord('#test-word', {
+        title: title,
+        exclude: ['.not-export', '.not-export1']
+      })
     }
+
+
+  // 获取 canvas 元素和 2D 渲染上下文
+  var canvas = document.getElementById('test');
+  var ctx = canvas.getContext('2d');
+
+  // 画一个填充的圆形
+  var centerX = canvas.width / 2;
+  var centerY = canvas.height / 2;
+  var radius = 200;
+
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+  ctx.fillStyle = 'green'; // 设置填充颜色
+  ctx.fill(); // 填充圆形
+  ctx.lineWidth = 2; // 设置线条宽度
+  ctx.strokeStyle = '#003300'; // 设置边框颜色
+  ctx.stroke(); // 绘制圆形边框
+
+
   </script>
 </body>
 </html>
