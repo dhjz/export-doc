@@ -128,6 +128,8 @@ export async function toWord(contEl, option) {
   let fileContent = mhtml.top.replace("_html_", mhtml.head.replace("_styles_", styles) + mhtml.body.replace("_body_", exthtml + domWrap.innerHTML));
   let blob = new Blob([fileContent], { type: "application/msword;charset=utf-8" });
   console.log('即将生成文件大小: ', blob.size, (blob.size / 1024 / 1024).toFixed(2) + 'M');
+  // 移除iframe内部元素, 方便下次导出
+  if (!window.devs) domWrap.remove()
   if (options.blob) return blob
   saveAs(blob, options.fileName + ".doc");
 }

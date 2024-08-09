@@ -585,14 +585,15 @@ var ExportDoc = (function () {
               type: "application/msword;charset=utf-8"
             });
             console.log('即将生成文件大小: ', blob.size, (blob.size / 1024 / 1024).toFixed(2) + 'M');
+            domWrap.remove();
             if (!options.blob) {
-              _context.next = 31;
+              _context.next = 32;
               break;
             }
             return _context.abrupt("return", blob);
-          case 31:
-            saveAs(blob, options.fileName + ".doc");
           case 32:
+            saveAs(blob, options.fileName + ".doc");
+          case 33:
           case "end":
             return _context.stop();
         }
