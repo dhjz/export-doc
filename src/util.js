@@ -24,7 +24,8 @@ export function setStyle(ele, sty) {
   if (ele.nodeName.toLowerCase() != 'img') {
     // let sty = getComputedStyle(ele)
     ele.setAttribute('style', (ele.getAttribute('style') || '') + `;font-size: ${sty.fontSize};color: ${sty.color};font-style: ${sty.fontStyle};line-height: ${sty.lineHeight};font-weight: ${sty.fontWeight};
-      font-family: ${sty.fontFamily};text-align: ${sty.textAlign};text-indent: ${sty.textIndent}; margin: ${sty.margin}; padding: ${sty.padding};`);
+      font-family: ${sty.fontFamily};text-align: ${sty.textAlign};text-indent: ${sty.textIndent}; margin: ${sty.margin}; padding: ${sty.padding};width: ${sty.width}; height: ${sty.height};
+      white-space:${sty.whiteSpace};word-break:${sty.wordBreak};display:${sty.display}`);
   }
 }
 

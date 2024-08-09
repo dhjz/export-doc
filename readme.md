@@ -6,6 +6,7 @@
 
 ### 构建
 ```shell
+npm install
 npm run build
 ```
 

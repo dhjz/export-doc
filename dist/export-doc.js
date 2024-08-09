@@ -405,7 +405,7 @@ var ExportDoc = (function () {
   function setStyle(ele, sty) {
     if (ele.nodeName.toLowerCase() != 'img') {
       // let sty = getComputedStyle(ele)
-      ele.setAttribute('style', (ele.getAttribute('style') || '') + ";font-size: ".concat(sty.fontSize, ";color: ").concat(sty.color, ";font-style: ").concat(sty.fontStyle, ";line-height: ").concat(sty.lineHeight, ";font-weight: ").concat(sty.fontWeight, ";\n      font-family: ").concat(sty.fontFamily, ";text-align: ").concat(sty.textAlign, ";text-indent: ").concat(sty.textIndent, "; margin: ").concat(sty.margin, "; padding: ").concat(sty.padding, ";"));
+      ele.setAttribute('style', (ele.getAttribute('style') || '') + ";font-size: ".concat(sty.fontSize, ";color: ").concat(sty.color, ";font-style: ").concat(sty.fontStyle, ";line-height: ").concat(sty.lineHeight, ";font-weight: ").concat(sty.fontWeight, ";\n      font-family: ").concat(sty.fontFamily, ";text-align: ").concat(sty.textAlign, ";text-indent: ").concat(sty.textIndent, "; margin: ").concat(sty.margin, "; padding: ").concat(sty.padding, ";width: ").concat(sty.width, "; height: ").concat(sty.height, ";"));
     }
   }
   function saveAs(blob, fileName) {
@@ -585,7 +585,8 @@ var ExportDoc = (function () {
               type: "application/msword;charset=utf-8"
             });
             console.log('即将生成文件大小: ', blob.size, (blob.size / 1024 / 1024).toFixed(2) + 'M');
-            domWrap.remove();
+            // 移除iframe内部元素, 方便下次导出
+            if (!window.devs) domWrap.remove();
             if (!options.blob) {
               _context.next = 32;
               break;
