@@ -405,7 +405,7 @@ var ExportDoc = (function () {
   function setStyle(ele, sty) {
     if (ele.nodeName.toLowerCase() != 'img') {
       // let sty = getComputedStyle(ele)
-      ele.setAttribute('style', (ele.getAttribute('style') || '') + ";font-size: ".concat(sty.fontSize, ";color: ").concat(sty.color, ";font-style: ").concat(sty.fontStyle, ";line-height: ").concat(sty.lineHeight, ";font-weight: ").concat(sty.fontWeight, ";\n      font-family: ").concat(sty.fontFamily, ";text-align: ").concat(sty.textAlign, ";text-indent: ").concat(sty.textIndent, "; margin: ").concat(sty.margin, "; padding: ").concat(sty.padding, ";width: ").concat(sty.width, "; height: ").concat(sty.height, ";"));
+      ele.setAttribute('style', (ele.getAttribute('style') || '') + ";font-size: ".concat(sty.fontSize, ";color: ").concat(sty.color, ";font-style: ").concat(sty.fontStyle, ";line-height: ").concat(sty.lineHeight, ";font-weight: ").concat(sty.fontWeight, ";\n      font-family: ").concat(sty.fontFamily, ";text-align: ").concat(sty.textAlign, ";text-indent: ").concat(sty.textIndent, "; margin: ").concat(sty.margin, "; padding: ").concat(sty.padding, ";width: ").concat(sty.width, "; height: ").concat(sty.height, ";\n      white-space:").concat(sty.whiteSpace, ";word-break:").concat(sty.wordBreak, ";display:").concat(sty.display));
     }
   }
   function saveAs(blob, fileName) {
