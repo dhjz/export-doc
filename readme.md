@@ -17,8 +17,10 @@ npm run build
 ExportDoc.toWord('#test-word', {
 	title: '关于导出王麻子这件事情',
 	time: '2024年8月15日 上午10点',
-	fileName: '剑来.doc',
-	exclude: ['.not-export', '.not-export1']
+	fileName: '剑来.doc', // 导出文件名
+	maxWidth: 550, // 正文图片最大宽度,
+    	blob: false, // 返回结果为blob
+	exclude: ['.not-export', '.not-export1'] // // 排除元素选择器
 })
 </script>
 ```
